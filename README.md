@@ -1,4 +1,5 @@
 # SQL_Proj : 
+Bookstore managment system
 The above SQL project involves creating a database for a library system to keep track of books, authors, and members. The database consists of four tables: books, authors, members, and loans. The books table stores information about the books available in the library such as title, ISBN number, publication date, and availability. The authors table stores information about the authors of the books including their name, date of birth, and nationality. The members table stores information about library members such as their name, membership number, and contact information. The loans table stores information about books that have been loaned out to members, including the member's name, book title, and loan date. Queries can be executed on the database to retrieve information about books, authors, members, and loans, and to perform operations such as checking out books and returning books.
 
 Employee management system 
