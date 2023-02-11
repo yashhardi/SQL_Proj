@@ -1,0 +1,45 @@
+-- Create Tables ---
+CREATE TABLE employees (
+  employee_id INT PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  email VARCHAR(50),
+  phone_number VARCHAR(15),
+  hire_date DATE,
+  job_id INT,
+  department_id INT,
+  FOREIGN KEY (job_id) REFERENCES jobs (job_id),
+  FOREIGN KEY (department_id) REFERENCES departments (department_id)
+);
+
+CREATE TABLE departments (
+  department_id INT PRIMARY KEY,
+  department_name VARCHAR(50),
+  location VARCHAR(50)
+);
+
+CREATE TABLE jobs (
+  job_id INT PRIMARY KEY,
+  job_title VARCHAR(50),
+  min_salary INT,
+  max_salary INT
+);
+---  Insert Data ---
+
+INSERT INTO departments (department_id, department_name, location)
+VALUES (10, 'IT', 'San Francisco'), (20, 'HR', 'Los Angeles'), (30, 'Marketing', 'New York');
+
+INSERT INTO jobs (job_id, job_title, min_salary, max_salary)
+VALUES (100, 'Software Engineer', 80000, 110000), (200, 'HR Manager', 70000, 90000), (300, 'Marketing Manager', 90000, 110000);
+
+INSERT INTO employees (employee_id, first_name, last_name, email, phone_number, hire_date, job_id, department_id)
+VALUES (1, 'John', 'Doe', 'johndoe@example.com', '555-555-5555', '2021-01-01', 100, 10),
+       (2, 'Jane', 'Doe', 'janedoe@example.com', '555-555-5556', '2021-02-01', 200, 20),
+       (3, 'Jim', 'Smith', 'jimsmith@example.com', '555-555-5557', '2021-03-01', 300, 30);
+       
+--- Retrieve Data ----
+SELECT * FROM employees;
+
+SELECT first_name,
+
+
