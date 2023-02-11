@@ -1,0 +1,52 @@
+//Project Title: Employee Management System//
+
+//Objective: To create a database to store and manage information about employees working in a company//
+
+//CREATE DATABASE EmployeeManagementSystem;//
+
+USE EmployeeManagementSystem;
+
+CREATE TABLE Employees (
+  EmployeeID INT PRIMARY KEY AUTO_INCREMENT,
+  FirstName VARCHAR(255) NOT NULL,
+  LastName VARCHAR(255) NOT NULL,
+  Email VARCHAR(255) NOT NULL,
+  PhoneNumber VARCHAR(255) NOT NULL,
+  HireDate DATE NOT NULL,
+  JobTitle VARCHAR(255) NOT NULL,
+  Department VARCHAR(255) NOT NULL,
+  Salary DECIMAL(10,2) NOT NULL
+);
+
+INSERT INTO Employees (FirstName, LastName, Email, PhoneNumber, HireDate, JobTitle, Department, Salary)
+VALUES
+  ('John', 'Doe', 'johndoe@email.com', '555-555-1212', '2022-01-01', 'Manager', 'Sales', '100000.00'),
+  ('Jane', 'Doe', 'janedoe@email.com', '555-555-1213', '2022-02-01', 'Associate', 'Sales', '50000.00'),
+  ('Jim', 'Smith', 'jimsmith@email.com', '555-555-1214', '2022-03-01', 'Manager', 'Marketing', '110000.00'),
+  ('Sarah', 'Johnson', 'sarahjohnson@email.com', '555-555-1215', '2022-04-01', 'Associate', 'Marketing', '52000.00');
+
+
+Queries:
+SELECT * FROM Employees;
+
+Select employees based on job title:
+
+SELECT * FROM Employees
+WHERE JobTitle = 'Manager';
+
+Select employees based on department:
+SELECT * FROM Employees
+WHERE Department = 'Sales';
+
+Select employees based on hire date:
+SELECT * FROM Employees
+WHERE HireDate >= '2022-01-01' AND HireDate <= '2022-12-31';
+
+Update salary for an employee:
+UPDATE Employees
+SET Salary = 55000.00
+WHERE EmployeeID = 2;
+
+Delete an employee:
+DELETE FROM Employees
+WHERE EmployeeID = 4;
